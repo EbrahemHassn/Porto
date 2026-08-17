@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ibrahim Hassan | Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Ibrahim Hassan Abdelstar, Full-Stack Developer specializing in Python, Django, Web Development, and Telegram Bots with 2 years of freelance experience."
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Ibrahim Hassan Abdelstar | Full-Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer specializing in Python, Django, Telegram Bots, and E-Commerce Solutions."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="shortcut icon" href="images/icone.png" type="image/x-icon">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Dependencies (GSAP & Three.js via CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Preloader Muted & Modern -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-content">
+        <div class="preloader-brand">
+          <div class="brand-avatar">
+            <i class="bi bi-terminal-fill"></i>
+          </div>
+          <div class="brand-text">
+            <span class="greeting">WELCOME TO MY PORTFOLIO</span>
+            <h2 class="developer-name">
+              IBRAHIM HASSAN ..<span class="dot">.</span>
+            </h2>
+          </div>
+        </div>
+
+        <div class="preloader-bar">
+          <div class="preloader-progress" id="preloader-progress"></div>
+        </div>
+
+        <span class="status-tag"
+          ><span class="pulse-dot"></span> INITIALIZING ENVIRONMENT...</span
+        >
+      </div>
+    </div>
+
+    <!-- Background Canvas -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">My Portfolio<span>.</span></a>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle Navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Overlay Navigation -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-menu-links">
+        <a href="#about" class="mobile-nav-link">About Me</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#projects" class="mobile-nav-link">Projects</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+          <div class="availability-badge">
+            <span class="badge-dot"></span> AVAILABLE FOR FREELANCE & FULL-TIME
+            OPPORTUNITIES
+          </div>
+          <h1 class="hero-title">
+            <span class="reveal-text">IBRAHIM HASSAN</span>
+            <span class="reveal-text accent-text">ABDELSTAR</span>
+          </h1>
+          <h2 class="hero-subtitle reveal-text">FULL-STACK DEVELOPER</h2>
+          <p class="hero-bio reveal-text">
+            I build fast, scalable, and reliable web applications - from modern
+            interfaces to powerful backend systems, APIs, databases, and
+            automation solutions.
+          </p>
+          <div class="hero-actions reveal-text">
+            <a href="#projects" class="btn btn-primary magnetic-btn"
+              >View My Work <i class="bi bi-arrow-down-right"></i
+            ></a>
+            <a href="#contact" class="btn btn-secondary magnetic-btn"
+              >Let's Talk</a
+            >
+          </div>
+        </div>
+
+        <!-- Right: Profile Card Image -->
+        <div class="hero-image-wrapper reveal-text">
+          <div class="profile-card" id="profile-card">
+            <div class="card-glass-glow"></div>
+            <div class="profile-image-container">
+              <img
+                src="images/me.jpg"
+                alt="Ibrahim Hassan"
+                class="profile-img"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/400x500/121216/00e5ff?text=Ibrahim+Hassan'
+                "
+              />
+            </div>
+            <div class="profile-card-badge">
+              <i class="bi bi-code-slash"></i> FULL-STACK DEVELOPER
+              <i class="bi bi-code-slash"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" aria-label="Scroll Down">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span class="scroll-text">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-label">01 // ABOUT ME</div>
+        <div class="about-grid">
+          <div class="about-text-container">
+            <h3 class="about-heading reveal-on-scroll">
+              Crafting functional, robust web systems & custom backend
+              solutions.
+            </h3>
+            <p class="about-description reveal-on-scroll">
+              Full-Stack Developer with 2 years of freelance experience building
+              web applications, backend systems, Telegram bots, and e-commerce
+              solutions. Strong hands-on experience with Python and Django,
+              modern front-end technologies, and relational/NoSQL databases.
+              Comfortable handling hosting platforms and domain management, with
+              a practical approach to troubleshooting and client requirements.
+            </p>
+          </div>
+          <div class="about-details-card reveal-on-scroll">
+            <div class="detail-item">
+              <span class="detail-label">Experience</span>
+              <span class="detail-value">2 Years (Freelance)</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Platforms</span>
+              <span class="detail-value">Upwork & Freelance Platforms</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Primary Stack</span>
+              <span class="detail-value">Python / Django / Full-Stack</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Languages</span>
+              <span class="detail-value">Arabic (Native), English (A2)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-label">02 // TECHNICAL ARCHITECTURE</div>
+        <h2 class="section-title reveal-on-scroll">Skills & Technologies</h2>
+
+        <div class="skills-grid" id="skills-container">
+          <!-- Rendered dynamically via js/data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education Timeline Section -->
+    <section id="experience" class="section timeline-section">
+      <div class="container">
+        <div class="section-label">03 // CAREER & EDUCATION</div>
+        <h2 class="section-title reveal-on-scroll">Experience & Education</h2>
+
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <!-- Experience Item -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2 YEARS EXPERIENCE</div>
+            <div class="timeline-content">
+              <h3 class="role-title">Freelance Full-Stack Developer</h3>
+              <span class="company-name"
+                >Upwork & Other Freelancing Platforms</span
+              >
+              <ul class="experience-list">
+                <li>
+                  Delivered multiple client-focused web and software projects
+                  from requirements to final delivery.
+                </li>
+                <li>
+                  Built full-stack applications using Python, Django, HTML, CSS,
+                  JavaScript, Bootstrap, jQuery, and React.js.
+                </li>
+                <li>
+                  Developed e-commerce websites, restaurant websites, Telegram
+                  bots, and business management systems.
+                </li>
+                <li>
+                  Worked with PostgreSQL, Microsoft SQL Server, and MongoDB.
+                </li>
+                <li>
+                  Handled Git/GitHub workflows, terminal environments, hosting
+                  platforms, and domain management.
+                </li>
+                <li>
+                  Performed testing, debugging, troubleshooting, and technical
+                  support.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education Item -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">HIGHER EDUCATION</div>
+            <div class="timeline-content">
+              <h3 class="role-title">Bachelor's Degree in Accounting</h3>
+              <span class="company-name">Higher Education</span>
+              <p class="timeline-desc">
+                Provides a strong foundation in logic, numerical accuracy,
+                analytical thinking, and business domain knowledge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-label">04 // SELECTED WORKS</div>
+        <h2 class="section-title reveal-on-scroll">Featured Projects</h2>
+
+        <div class="projects-list" id="projects-container">
+          <!-- Rendered dynamically via js/data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal" aria-hidden="true">
+      <div class="modal-container">
+        <button class="modal-close" id="modal-close" aria-label="Close modal">
+          &times;
+        </button>
+        <div class="modal-content" id="modal-content-body">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-label">05 // GET IN TOUCH</div>
+        <div class="contact-wrapper reveal-on-scroll">
+          <h2 class="contact-cta-title">LET'S BUILD SOMETHING GREAT.</h2>
+          <p class="contact-subtitle">
+            Have a project, freelance opportunity, or custom backend
+            requirement?
+          </p>
+
+          <div class="contact-details">
+            <a
+              href="mailto:Himainfo01@gmail.com"
+              class="contact-link-large magnetic-btn"
+            >
+              Himainfo01@gmail.com <i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="tel:01029570139" class="contact-link-secondary">
+              <i class="bi bi-telephone"></i> 01029570139
+            </a>
+          </div>
+
+          <div class="contact-footer-info">
+            <div class="info-block">
+              <span class="info-label">Location / Work Type</span>
+              <span class="info-val">Remote / Freelance</span>
+            </div>
+            <div class="info-block">
+              <span class="info-label">Direct Email</span>
+              <span class="info-val">Himainfo01@gmail.com</span>
+            </div>
+            <div class="info-block">
+              <span class="info-label">Phone</span>
+              <span class="info-val">01029570139</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Ibrahim Hassan Abdelstar. All rights reserved.</p>
+        <p class="footer-tagline">
+          Designed & Built with HTML5, CSS3, Three.js & GSAP.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Custom Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
