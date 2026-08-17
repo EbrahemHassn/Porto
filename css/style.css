@@ -789,7 +789,7 @@ button {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 40px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 0.1fr 1fr;
   gap: 30px;
@@ -826,7 +826,7 @@ button {
 
 .project-title {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 
